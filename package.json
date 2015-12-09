@@ -1,0 +1,17 @@
+{
+  "name": "zhibeifo-dailywork",
+  "version": "0.0.1",
+  "description": "Record dailywork",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Sam Sun <sam912358@gmail.com>",
+  "license": "ISC"
+}
