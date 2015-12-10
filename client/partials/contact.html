@@ -1,1 +1,10 @@
-Contact Person: samsun@gmail.com
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+       
+      </uib-slide>
+    </uib-carousel>
+  </div>
+</div>    
