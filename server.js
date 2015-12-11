@@ -8,7 +8,9 @@ mongoose.connect(configDB.url);
 var port = process.env.PORT;
 
 var bodyParser = require("body-parser");
+var methodOverride= require("method-override");
 app.use(bodyParser.json());
+app.use(methodOverride());
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'client', 'views'));
