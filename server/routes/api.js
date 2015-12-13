@@ -1,6 +1,6 @@
 var Customer = require("../models/customer");
 module.exports = function(router){
-    router.post('/customer', function(req, res){
+    router.post('/customers', function(req, res){
         console.log(req.body);
         var customer = new Customer();
         customer.firstname = req.body.firstname;
@@ -26,10 +26,15 @@ module.exports = function(router){
         });
     });
     
-    router.delete();
     router.get('/customers/:id', function(req, res) {
         Customer.findOne({_id: req.params.id}, function(err, data){
             res.json(data);
+        })
+    })
+    
+    router.delete('/customers', function(req, res){
+        Customer.remove({}, function(err) {
+            res.json({result: err? "error" : "ok"});
         })
     })
     
