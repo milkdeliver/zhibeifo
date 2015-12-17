@@ -20,7 +20,10 @@
     "bootstrap": "~3.3.4",
     "angular-route": "~1.4.8",
     "angular-resource": "~1.4.8",
-    "angular-bootstrap": "~0.14.3"
+    "angular-bootstrap": "~0.14.3",
+    "angular-animate": "~1.4.8",
+    "bootbox": "4.4.0",
+    "cal-heatmap": "~3.3.10"
   },
   "install": {
     "path": "client/libs"

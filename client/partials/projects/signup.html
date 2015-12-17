@@ -54,13 +54,15 @@
                 <th>Class</th>
                 <th>Phone</th>
             </thead>
-            <tr ng-repeat="customer in customers">
+            <tr ng-repeat="customer in customers | startFrom(currentPage - 1) * 5 | limitTo: pageSize">
                 <td>{{customer.firstname}}, {{customer.lastname}}</td>
                 <td>{{customer.classname}}</td>
                 <td>{{customer.phone}}</td>
-                <td><i class="fa fa-trash" ng-click="delete($index)"></i></td>
+                <td><i class="fa fa-trash" ng-click="delete((currentPage - 1) * pageSize + $index)"></i></td>
             </tr>
         </table>
     </div> 
+    
+    <pagination total-items="customers.length" ng-model="currentPage" item-per-page="pageSize"></pagination>
  </div>
 

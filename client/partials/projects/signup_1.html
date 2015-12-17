@@ -1,0 +1,43 @@
+ <div class="row">
+     <div class="col-xs-12 col-md-4 col-md-offset-4">
+        <form class="well form-auth">
+            <div class="form-group">
+                <label for="nickname">Name</label>
+                <input type="text" class="form-control" id="name" ng-model="form.nickname">
+            </div>
+            
+             <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="samsun@example.com"  type="text" class="form-control" id="email" ng-model="form.email">
+            </div>
+            
+             <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" ng-model="form.password">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block" ng-click="addToUserDatabase()">Save</button>
+            </div>
+        </form>
+    </div>
+    
+    <!--<div class="col-xs-12 col-md-6">-->
+    <!--    <table class="table table-strip table-hover" >-->
+    <!--        <thead>-->
+    <!--            <th>Name</th>-->
+    <!--            <th>Email</th>-->
+    <!--            <th>Password</th>-->
+    <!--        </thead>-->
+    <!--        <tr ng-repeat="user in users| startFrom:(currentPage - 1) * 5 | limitTo: pageSize">-->
+    <!--            <td>{{user.nickname}}</td>-->
+    <!--            <td>{{user.email}}</td>-->
+    <!--            <td>{{user.password}}</td>-->
+    <!--            <td><i class="fa fa-trash" ng-click="deleteUser((currentPage - 1) * pageSize + $index)"></i></td>-->
+    <!--        </tr>-->
+    <!--    </table>-->
+    <!--</div> -->
+    
+    <!--<pagination total-items="users.length" ng-model="currentPage" item-per-page="pageSize"></pagination>-->
+ </div>
+
