@@ -16,8 +16,15 @@ module.exports = function(passport){
     //Desieralize user will call with the unique id provided by serializeuser
     passport.deserializeUser(function(id, done) {
 		User.findById(id, function(err, user) {
-			console.log('deserializing user:', user.username);
-			done(err, user);
+		    if(err)
+		       return done(err, false);
+		    
+		    if(!user){
+		       return done('user not found', false);
+		    }
+		    //we found the user object provide it back to passport
+		     done(null, user);
+		  //   done(err, user);
 		});
 	});
 
@@ -36,7 +43,7 @@ module.exports = function(passport){
             // User exists but wrong password, log the error 
             if (!isValidPassword(user, password)){
                 console.log('Invalid Password');
-                return done(null, false); // redirect back to login page
+                return done('incorrect password', false); // redirect back to login page
             }
             
             // User and password both match, return user from done method

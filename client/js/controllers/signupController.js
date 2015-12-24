@@ -1,17 +1,11 @@
 myApp.controller('signupController', ['$scope','Api', function($scope, Api){
     $scope.form = {};
-    $scope.customers = [];
-    $scope.users = [];
     $scope.pageSize = 5;
     $scope.currentPage = 1;
     
-    Api.Customer.query({}, function (data) {
-       $scope.customers = data; 
-    })
-    
-    Api.User.query({}, function (data) {
-       $scope.users = data; 
-    })
+    // Api.User.query({}, function (data) {
+    //   $scope.users = data; 
+    // })
     
     $scope.addToUserDatabase = function(){
         console.log($scope.form);
