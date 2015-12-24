@@ -1,9 +1,10 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var userSchema = mongoose.Schema({
-    nickname: String,
+    // username: String,
     email : String,
-    password: String,
+    password: String,//hash created from password
+    username: String,
     created: {type: Date, default: Date.now}
 });
 

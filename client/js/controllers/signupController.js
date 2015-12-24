@@ -14,7 +14,12 @@ myApp.controller('signupController', ['$scope','Api', function($scope, Api){
     })
     
     $scope.addToUserDatabase = function(){
-        Api.User.save({}, $scope.form, 
+        console.log($scope.form);
+        var newUser = {};
+        newUser.username = $scope.form.username;
+        newUser.password = $scope.form.password;
+        newUser.email = $scope.form.email;
+        Api.User.save({}, newUser, 
         function(data){
             // $scope.form = {};
             $scope.users.push(data);
@@ -48,9 +53,9 @@ myApp.controller('signupController', ['$scope','Api', function($scope, Api){
     }
     
     $scope.deleteUser = function (index) {
-        bootbox.confirm("Are you want to delete this customer?", function(answer) {
+        bootbox.confirm("Are you want to delete this User?", function(answer) {
             if(answer == true){
-              Api.Customer.delete({id: $scope.users[index]._id}, function(data) {
+              Api.User.delete({id: $scope.users[index]._id}, function(data) {
                   $scope.users.splice(index, 1);
               });   
             }
